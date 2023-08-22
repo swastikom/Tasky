@@ -48,14 +48,19 @@ class Main {
 
     public static void main(String[] args) {
         while (true) {
+            
+            System.out.println();
             System.out.println("Welcome to Tasky!");
+            System.out.println();
             System.out.println("1. Task List");
             System.out.println("2. Add Task");
             System.out.println("3. Delete Task");
             System.out.println("4. Exit");
+            System.out.println();
             System.out.println("Enter your choice : ");
             int choice = scanner.nextInt();
             scanner.nextLine();
+            System.out.println();
 
             switch (choice) {
                 case 1:
@@ -79,33 +84,52 @@ class Main {
     }
 
     private static void taskList() {
-        class TaskManager {
-            private List<Task> tasks;
-        
-            public TaskManager() {
-                tasks = new ArrayList<>();
-            }
     }
 
     private static void addTask() {
+        System.out.println();
+        System.out.println("!-------------Add Task----------------!");
+        System.out.println();
         System.out.println("Enter Task Title: ");
         String title = scanner.nextLine();
         System.out.println("Enter Task Priority: ");
         int priority = scanner.nextInt();
         Task task = new Task(title, priority);
         tasks.add(task);
-        System.out.println("Task Created Successfully!");
+        System.out.println();
+        System.out.println("!------Task Created Successfully------!");
+        System.out.println();
     }
 
     private static void deleteTask() {
-        if (tasks.isEmpty()) {
-            System.out.println("No Tasks are there!");
-            return;
-        }
-        System.out.println("Enter Task number Delete!");
-        int taskNumber = scanner.nextInt();
-        scanner.nextInt();
+    if (tasks.isEmpty()) {
+        System.out.println("Oops! No task to Delete.");
+        return;
     }
+
+    
+        System.out.println("!-----------Delete Task-------------!");
+
+    System.out.println();
+    System.out.print("Enter the task number to delete: ");
+    int taskNumber = scanner.nextInt();
+    scanner.nextLine();  // Consume the newline character
+
+    if (taskNumber < 1 || taskNumber > tasks.size()) {
+        System.out.println("Invalid task number.");
+        return;
+    }
+
+    Task removedTask = tasks.remove(taskNumber - 1);
+    System.out.println();
+    System.out.println("!------Task removed------!");
+    System.out.println();
+    System.out.println(removedTask);
+    System.out.println();
+    System.out.println("!------------------------!");
+    System.out.println();
+}
+
 }
 
 // Title:Task Name,

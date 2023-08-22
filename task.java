@@ -84,6 +84,18 @@ class Main {
     }
 
     private static void taskList() {
+        if (tasks.isEmpty())
+        {
+            System.out.println( "No tasks exits!");
+        }
+       else{
+        System.out.println("List of Tasks : ");
+        for (int i = 0 ; i < tasks.size() ; i++ )
+        {
+            System.out.println(tasks.get(i));
+            System.out.println();
+        }
+       }
     }
 
     private static void addTask() {

@@ -16,7 +16,27 @@ class Task {
     }
 }
 
+class Main {
+    private static Scanner scanner = new Scanner(System.in);
 
+    public static void main(String[] args) {
+        while (true) {
+            System.out.println("Welcome to Taanky!");
+            System.out.println("1. Task List");
+            System.out.println("2. Add Task");
+            System.out.println("3. Delete Task");
+            System.out.println("4. Exit");
+            System.out.println("Enter your choice : ");
+            int choice = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (choice) {
+                case 1:
+                    taskList();
+                    break;
+                case 2:
+                    addTask();
+                    break;
 
             }
         }
